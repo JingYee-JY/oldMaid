@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif;
+}
+body{
+    background-color: #255273;
+}
+img{
+    width: 148vh;
+    height: 190vh;
+}
+.wrapper{
+    box-sizing: content-box;
+    width: 26.87em;
+    padding: 2.5em 3em;
+    background-color:rgb(#255273,0);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+}
+.game-container{
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1em;
+}
+.card-container{
+    position: relative;
+    width: 9.25em;
+    height: 9.25em;
+    cursor: pointer;
+}
+.image{
+    position: absolute;
+    width: 6.5em;
+    height: 9.2em;
+    left: -1%;
+}
+.card-before,
+.card-after{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+}
+.card-before{
+    background-image: url("./img/Cover.png");
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.card-after{
+    transform: rotateY(180deg);
+}
+.card-container.flipped .card-before {
+    transform: rotateY(180deg);
+  }
+.card-container.flipped .card-after {
+    transform: rotateY(0deg);
+  }
+.controls-container {
+  position: absolute;
+  display: flex;
+  bottom: 10vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+button{
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.3em 0.7em;
+    cursor: pointer;
+}
+.controls-container button{
+    font-size: 1.7em;
+    background-color: #FF865E;
+    color: #0F63A5;
+    box-shadow: 0em 0.6em 0.2em rgb(86, 66,0,0.2);
+}
+.hide{
+    display: none;
+}
+h1{
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+.back-video{
+    position: absolute;
+    justify-content: center;
+    top: 4vh;
+    width: 97%;
+    height: 97%;
+}
+.video-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
