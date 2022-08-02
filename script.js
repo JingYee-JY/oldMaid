@@ -60,13 +60,13 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
     shuffleNumber = value;
     if(shuffleNumber === 1){
         videoContainer.innerHTML = `
-        <video autoplay mute plays-inline class="back-video">
+        <video autoplay muted playsinline class="back-video">
         <source src = "img/Shuffle1.mp4" type = "video/mp4">
         </video>`
     }
     else{
         videoContainer.innerHTML = `
-        <video autoplay mute plays-inline class="back-video">
+        <video autoplay muted playsinline class="back-video">
         <source src = "img/Shuffle2.mp4" type = "video/mp4">
         </video>`
     }
