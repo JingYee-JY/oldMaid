@@ -98,19 +98,19 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
         let card1 = document.querySelector(".card-shuffle1")
         let card2 = document.querySelector(".card-shuffle2")
         let card3 = document.querySelector(".card-shuffle3")
-        card1.style.animation= "shuffle12Cu 0.7s steps(8)"
-        card3.style.animation= "shuffle31Cu 0.7s steps(8)"
+        card1.style.animation= "shuffle12Cu 0.7s steps(10)"
+        card3.style.animation= "shuffle31Cu 0.7s steps(10)"
         let delaysecond = setTimeout(() => {
-            card1.style.animation= "shuffle13Cd 0.7s steps(8)"
-            card3.style.animation= "shuffle31Cd 0.7s steps(8)"
+            card1.style.animation= "shuffle13Cd 0.7s steps(10)"
+            card3.style.animation= "shuffle31Cd 0.7s steps(10)"
           }, 700);
         let delay = setTimeout(() => {
-            card2.style.animation= "shuffle23Cu 0.7s steps(8)"
-            card3.style.animation= "shuffle32Cu 0.7s steps(8)"
+            card2.style.animation= "shuffle23Cu 0.7s steps(10)"
+            card3.style.animation= "shuffle32Cu 0.7s steps(10)"
           }, 1400);
           let delaylast = setTimeout(() => {
-            card2.style.animation= "shuffle23Cd 0.7s steps(8)"
-        card3.style.animation= "shuffle32Cd 0.7s steps(8)"
+            card2.style.animation= "shuffle23Cd 0.7s steps(10)"
+        card3.style.animation= "shuffle32Cd 0.7s steps(10)"
           }, 2100);
           let delayFinish = setTimeout(() => {
             Choose();

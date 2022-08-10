@@ -142,67 +142,67 @@ h1{
     width: 100%;
 }
 .card-shuffle1{
-    background-position: 60vh;
+    background-position: 55vmin 27vmin;
 }
 .card-shuffle2{
-    background-position: 96vh;
+    background-position: 96vmin 27vmin;
 }
 .card-shuffle3{
-    background-position: 132vh;
+    background-position: 135vmin 27vmin;
 }
 
 @keyframes shuffle12Cu {
-    from {background-position-x: 60vh;} to{background-position-x: 78vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+    from {background-position-x: 55vmin;} to{background-position-x: 75vh;}
+    from {background-position-y: 27vmin;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle12Cd {
-    from {background-position-x: 78vh;} to{background-position-x: 96vh;}
-        from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+    from {background-position-x: 75vmin;} to{background-position-x: 96vh;}
+        from {background-position-y: 60vmin;} to{background-position-y: 32vh;}
     }
 
 @keyframes shuffle21Cu {
-    from {background-position-x: 96vh;} to{background-position-x: 78vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+    from {background-position-x: 96vmin;} to{background-position-x: 75vh;}
+    from {background-position-y: 32vmin;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle21Cd {
-    from {background-position-x: 78vh;} to{background-position-x: 60vh;}
-    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+    from {background-position-x: 75vmin;} to{background-position-x: 55vh;}
+    from {background-position-y: 8vmin;} to{background-position-y: 32vh;}
 }
 
 
 @keyframes shuffle23Cu {
-    from {background-position-x: 96vh;} to{background-position-x: 114vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+    from {background-position-x: 96vmin;} to{background-position-x: 115vmin;}
+    from {background-position-y: 32vmin;} to{background-position-y: 60vmin;}
 }
 @keyframes shuffle23Cd {
-    from {background-position: 114vh;} to{background-position: 132vh;}
-    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+    from {background-position: 115vmin;} to{background-position: 135vmin;}
+    from {background-position-y: 60vmin;} to{background-position-y: 32vmin;}
 }
 
 @keyframes shuffle32Cu {
-    from {background-position-x: 132vh;} to{background-position-x: 114vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+    from {background-position-x: 135vmin;} to{background-position-x: 115vmin;}
+    from {background-position-y: 32vmin;} to{background-position-y: 8vmin;}
 }
 @keyframes shuffle32Cd {
-    from {background-position-x: 114vh;} to{background-position-x: 96vh;}
-    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+    from {background-position-x: 115vmin;} to{background-position-x: 96vmin;}
+    from {background-position-y: 8vmin;} to{background-position-y: 32vmin;}
 }
 
 @keyframes shuffle31Cu {
-    from {background-position-x: 132vh;} to{background-position-x: 96vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+    from {background-position-x: 135vmin;} to{background-position-x: 96vmin;}
+    from {background-position-y: 32vmin;} to{background-position-y: 8vmin;}
 }
 @keyframes shuffle31Cd {
-    from {background-position-x: 96vh;} to{background-position-x: 60vh;}
-    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+    from {background-position-x: 96vmin;} to{background-position-x: 55vmin;}
+    from {background-position-y: 8vmin;} to{background-position-y: 32vmin;}
 }
 
 @keyframes shuffle13Cu {
-    from {background-position-x: 60vh;} to{background-position-x: 96vh;}
-    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+    from {background-position-x: 55vmin;} to{background-position-x: 96vmin;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vmin;}
 }
 @keyframes shuffle13Cd {
-    from {background-position: 96vh;} to{background-position: 132vh;}
-    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+    from {background-position: 96vmin;} to{background-position: 135vmin;}
+    from {background-position-y: 60vmin;} to{background-position-y: 32vmin;}
 }
 
