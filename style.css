@@ -72,7 +72,7 @@ img{
 .controls-container {
   position: absolute;
   display: flex;
-  bottom: 15vh;
+  bottom: 10vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
