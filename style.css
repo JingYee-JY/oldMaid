@@ -139,66 +139,66 @@ h1{
     width: 100%;
 }
 .card-shuffle1{
-    background-position: 55vmin 27vmin;
+    background-position: 55vh 27vh;
 }
 .card-shuffle2{
-    background-position: 96vmin 27vmin;
+    background-position: 96vh 27vh;
 }
 .card-shuffle3{
-    background-position: 135vmin 27vmin;
+    background-position: 135vh 27vh;
 }
 @keyframes shuffle12Cu {
-    from {background-position-x: 55vmin;} to{background-position-x: 75vh;}
-    from {background-position-y: 27vmin;} to{background-position-y: 60vh;}
+    from {background-position-x: 55vh;} to{background-position-x: 75vh;}
+    from {background-position-y: 27vh;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle12Cd {
-    from {background-position-x: 75vmin;} to{background-position-x: 96vh;}
-        from {background-position-y: 60vmin;} to{background-position-y: 32vh;}
+    from {background-position-x: 75vh;} to{background-position-x: 96vh;}
+        from {background-position-y: 60vh;} to{background-position-y: 32vh;}
     }
 
 @keyframes shuffle21Cu {
-    from {background-position-x: 96vmin;} to{background-position-x: 75vh;}
-    from {background-position-y: 32vmin;} to{background-position-y: 8vh;}
+    from {background-position-x: 96vh;} to{background-position-x: 75vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle21Cd {
-    from {background-position-x: 75vmin;} to{background-position-x: 55vh;}
-    from {background-position-y: 8vmin;} to{background-position-y: 32vh;}
+    from {background-position-x: 75vh;} to{background-position-x: 55vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
 }
 
 
 @keyframes shuffle23Cu {
-    from {background-position-x: 96vmin;} to{background-position-x: 115vmin;}
-    from {background-position-y: 32vmin;} to{background-position-y: 60vmin;}
+    from {background-position-x: 96vh;} to{background-position-x: 115vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle23Cd {
-    from {background-position: 115vmin;} to{background-position: 135vmin;}
-    from {background-position-y: 60vmin;} to{background-position-y: 32vmin;}
+    from {background-position: 115vh;} to{background-position: 135vh;}
+    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
 }
 
 @keyframes shuffle32Cu {
-    from {background-position-x: 135vmin;} to{background-position-x: 115vmin;}
-    from {background-position-y: 32vmin;} to{background-position-y: 8vmin;}
+    from {background-position-x: 135vh;} to{background-position-x: 115vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle32Cd {
-    from {background-position-x: 115vmin;} to{background-position-x: 96vmin;}
-    from {background-position-y: 8vmin;} to{background-position-y: 32vmin;}
+    from {background-position-x: 115vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
 }
 
 @keyframes shuffle31Cu {
-    from {background-position-x: 135vmin;} to{background-position-x: 96vmin;}
-    from {background-position-y: 32vmin;} to{background-position-y: 8vmin;}
+    from {background-position-x: 135vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle31Cd {
-    from {background-position-x: 96vmin;} to{background-position-x: 55vmin;}
-    from {background-position-y: 8vmin;} to{background-position-y: 32vmin;}
+    from {background-position-x: 96vh;} to{background-position-x: 55vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
 }
 
 @keyframes shuffle13Cu {
-    from {background-position-x: 55vmin;} to{background-position-x: 96vmin;}
-    from {background-position-y: 32vh;} to{background-position-y: 60vmin;}
+    from {background-position-x: 55vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle13Cd {
-    from {background-position: 96vmin;} to{background-position: 135vmin;}
-    from {background-position-y: 60vmin;} to{background-position-y: 32vmin;}
+    from {background-position: 96vh;} to{background-position: 135vh;}
+    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
 }
 
