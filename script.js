@@ -142,6 +142,7 @@ const matrixGenerator = (cardValues, size = 3) => {
             if(pickCard == false){
                 let cardName = card.getAttribute("data-card-value");
                 card.classList.add("flipped");
+                pickCard = true;
 
                 if(cardName == "boy"){
                     stopGame();
