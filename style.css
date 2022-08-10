@@ -25,7 +25,7 @@ img{
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 50%;
+    top: 45%;
     border-radius: 0.6em;
 }
 .game-container{
@@ -100,7 +100,7 @@ h1{
     text-align: center;
     color: #fff;
     position: absolute;
-    top: 10%;
+    top: 5%;
     width: 100%;
 }
 .back-video{

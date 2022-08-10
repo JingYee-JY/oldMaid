@@ -85,7 +85,7 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
           }, 2100);
           let delayFinish = setTimeout(() => {
             Choose();
-          }, 2800); 
+          }, 3000); 
     }
     else{
         videoContainer.innerHTML = `
@@ -114,7 +114,7 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
           }, 2100);
           let delayFinish = setTimeout(() => {
             Choose();
-          }, 2800); 
+          }, 3000); 
     }
     console.log(shuffleNumber)
 }
