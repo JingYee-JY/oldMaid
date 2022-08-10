@@ -41,8 +41,6 @@ img{
     display: flex;
     width: 9.25em;
     height: 9.25em;
-    
-    cursor: pointer;
 }
 .image{
     position: absolute;
@@ -74,7 +72,7 @@ img{
 .controls-container {
   position: absolute;
   display: flex;
-  bottom: 10vh;
+  bottom: 15vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -84,7 +82,6 @@ button{
     border: none;
     border-radius: 0.5em;
     padding: 0.3em 0.7em;
-    cursor: pointer;
 }
 .controls-container button{
     font-size: 1.7em;
@@ -150,7 +147,6 @@ h1{
 .card-shuffle3{
     background-position: 135vmin 27vmin;
 }
-
 @keyframes shuffle12Cu {
     from {background-position-x: 55vmin;} to{background-position-x: 75vh;}
     from {background-position-y: 27vmin;} to{background-position-y: 60vh;}
