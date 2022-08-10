@@ -51,7 +51,7 @@ const shuffleCard = () =>{
         matrixGenerator(cardValues);
     }
     else{
-        changePosition(1,2,0)
+        changePosition(2,0,1)
         matrixGenerator(cardValues);
     }
 }
@@ -60,15 +60,61 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
     shuffleNumber = value;
     if(shuffleNumber === 1){
         videoContainer.innerHTML = `
-        <video autoplay muted playsinline class="back-video">
-        <source src = "img/Shuffle1.mp4" type = "video/mp4">
-        </video>`
+        <div class="card-shuffle1">
+        </div>
+        <div class="card-shuffle2">
+        </div>
+        <div class="card-shuffle3">
+        </div>`
+        let card1 = document.querySelector(".card-shuffle1")
+        let card2 = document.querySelector(".card-shuffle2")
+        let card3 = document.querySelector(".card-shuffle3")
+        card1.style.animation= "shuffle12Cu 0.7s steps(10)"
+        card2.style.animation= "shuffle21Cu 0.7s steps(10)"
+        let delaysecond = setTimeout(() => {
+            card1.style.animation= "shuffle12Cd 0.7s steps(10)"
+            card2.style.animation= "shuffle21Cd 0.7s steps(10)"
+          }, 700);
+        let delay = setTimeout(() => {
+            card2.style.animation= "shuffle23Cu 0.7s steps(10)"
+            card3.style.animation= "shuffle32Cu 0.7s steps(10)"
+          }, 1400);
+          let delaylast = setTimeout(() => {
+            card2.style.animation= "shuffle23Cd 0.7s steps(10)"
+        card3.style.animation= "shuffle32Cd 0.7s steps(10)"
+          }, 2100);
+          let delayFinish = setTimeout(() => {
+            Choose();
+          }, 2800); 
     }
     else{
         videoContainer.innerHTML = `
-        <video autoplay muted playsinline class="back-video">
-        <source src = "img/Shuffle2.mp4" type = "video/mp4">
-        </video>`
+        <div class="card-shuffle1">
+        </div>
+        <div class="card-shuffle2">
+        </div>
+        <div class="card-shuffle3">
+        </div>`
+        let card1 = document.querySelector(".card-shuffle1")
+        let card2 = document.querySelector(".card-shuffle2")
+        let card3 = document.querySelector(".card-shuffle3")
+        card1.style.animation= "shuffle12Cu 0.7s steps(8)"
+        card3.style.animation= "shuffle31Cu 0.7s steps(8)"
+        let delaysecond = setTimeout(() => {
+            card1.style.animation= "shuffle13Cd 0.7s steps(8)"
+            card3.style.animation= "shuffle31Cd 0.7s steps(8)"
+          }, 700);
+        let delay = setTimeout(() => {
+            card2.style.animation= "shuffle23Cu 0.7s steps(8)"
+            card3.style.animation= "shuffle32Cu 0.7s steps(8)"
+          }, 1400);
+          let delaylast = setTimeout(() => {
+            card2.style.animation= "shuffle23Cd 0.7s steps(8)"
+        card3.style.animation= "shuffle32Cd 0.7s steps(8)"
+          }, 2100);
+          let delayFinish = setTimeout(() => {
+            Choose();
+          }, 2800); 
     }
     console.log(shuffleNumber)
 }
@@ -87,7 +133,7 @@ const matrixGenerator = (cardValues, size = 3) => {
         `;
     }
     //Grid
-    gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+    gameContainer.style.gridTemplateColumns = `repeat(${size},9.25em)`;
     
     //Cards
     cards = document.querySelectorAll(".card-container");
@@ -147,6 +193,7 @@ Show = () => {
     
   }
   Mix = () => {
+    videoContainer.classList.remove("hide")
     if(Videoshuffle == false){
         shuffleVideo()
         Videoshuffle = true;
@@ -154,10 +201,10 @@ Show = () => {
         cards.forEach((card) => {
             card.classList.add("hide");
         })
-        video = document.querySelector(".back-video");
-        let delay = setTimeout(() => {
-            Choose();
-          }, 2500);
+        //video = document.querySelector(".back-video");
+        //let delay = setTimeout(() => {
+         //   Choose();
+         // }, 2500);
   }
 
   
@@ -170,7 +217,7 @@ Choose = () => {
     matrixGenerator(cardValues);
     pickCard = false;
     instruction.classList.add("hide");
-    video.classList.add("hide");
+    videoContainer.classList.add("hide");
     chooseInstruction.classList.remove("hide");
   }
 

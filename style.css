@@ -6,6 +6,13 @@
 }
 body{
     background-color: #255273;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
 }
 img{
     width: 148vh;
@@ -14,7 +21,6 @@ img{
 .wrapper{
     box-sizing: content-box;
     width: 26.87em;
-    padding: 2.5em 3em;
     background-color:rgb(#255273,0);
     position: absolute;
     transform: translate(-50%, -50%);
@@ -30,8 +36,12 @@ img{
 }
 .card-container{
     position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     width: 9.25em;
     height: 9.25em;
+    
     cursor: pointer;
 }
 .image{
@@ -84,6 +94,7 @@ button{
 }
 .hide{
     display: none;
+    visibility: hidden;
 }
 h1{
     text-align: center;
@@ -99,10 +110,99 @@ h1{
     width: 97%;
     height: 97%;
 }
-.video-container{
+.video-container,
+.choose-container,
+.start-container,
+.instruction-container,
+.lose-result,
+.win-result,
+.card{
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+.card-shuffle1,
+.card-shuffle2,
+.card-shuffle3
+{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    background-image: url("./img/Cover.png");
+    background-size: 6.5em 9.25em;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.card-shuffle1{
+    background-position: 60vh;
+}
+.card-shuffle2{
+    background-position: 96vh;
+}
+.card-shuffle3{
+    background-position: 132vh;
+}
+
+@keyframes shuffle12Cu {
+    from {background-position-x: 60vh;} to{background-position-x: 78vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+}
+@keyframes shuffle12Cd {
+    from {background-position-x: 78vh;} to{background-position-x: 96vh;}
+        from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+    }
+
+@keyframes shuffle21Cu {
+    from {background-position-x: 96vh;} to{background-position-x: 78vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+}
+@keyframes shuffle21Cd {
+    from {background-position-x: 78vh;} to{background-position-x: 60vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+}
+
+
+@keyframes shuffle23Cu {
+    from {background-position-x: 96vh;} to{background-position-x: 114vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+}
+@keyframes shuffle23Cd {
+    from {background-position: 114vh;} to{background-position: 132vh;}
+    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+}
+
+@keyframes shuffle32Cu {
+    from {background-position-x: 132vh;} to{background-position-x: 114vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+}
+@keyframes shuffle32Cd {
+    from {background-position-x: 114vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+}
+
+@keyframes shuffle31Cu {
+    from {background-position-x: 132vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 8vh;}
+}
+@keyframes shuffle31Cd {
+    from {background-position-x: 96vh;} to{background-position-x: 60vh;}
+    from {background-position-y: 8vh;} to{background-position-y: 32vh;}
+}
+
+@keyframes shuffle13Cu {
+    from {background-position-x: 60vh;} to{background-position-x: 96vh;}
+    from {background-position-y: 32vh;} to{background-position-y: 60vh;}
+}
+@keyframes shuffle13Cd {
+    from {background-position: 96vh;} to{background-position: 132vh;}
+    from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+}
+
