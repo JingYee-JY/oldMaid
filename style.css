@@ -140,7 +140,7 @@ h1{
     width: 100%;
 }
 .card-shuffle1{
-    background-position: 55vh 27vh;
+    background-position: 56vmin 27vh;
 }
 .card-shuffle2{
     background-position: 96vh 27vh;
@@ -149,7 +149,7 @@ h1{
     background-position: 135vh 27vh;
 }
 @keyframes shuffle12Cu {
-    from {background-position-x: 55vh;} to{background-position-x: 75vh;}
+    from {background-position-x: 56vh;} to{background-position-x: 75vh;}
     from {background-position-y: 27vh;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle12Cd {
@@ -162,7 +162,7 @@ h1{
     from {background-position-y: 32vh;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle21Cd {
-    from {background-position-x: 75vh;} to{background-position-x: 55vh;}
+    from {background-position-x: 75vh;} to{background-position-x: 56vh;}
     from {background-position-y: 8vh;} to{background-position-y: 32vh;}
 }
 
@@ -190,12 +190,12 @@ h1{
     from {background-position-y: 32vh;} to{background-position-y: 8vh;}
 }
 @keyframes shuffle31Cd {
-    from {background-position-x: 96vh;} to{background-position-x: 55vh;}
+    from {background-position-x: 96vh;} to{background-position-x: 56vh;}
     from {background-position-y: 8vh;} to{background-position-y: 32vh;}
 }
 
 @keyframes shuffle13Cu {
-    from {background-position-x: 55vh;} to{background-position-x: 96vh;}
+    from {background-position-x: 56vh;} to{background-position-x: 96vh;}
     from {background-position-y: 32vh;} to{background-position-y: 60vh;}
 }
 @keyframes shuffle13Cd {

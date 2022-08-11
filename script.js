@@ -103,7 +103,7 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
         let delaysecond = setTimeout(() => {
             card1.style.animation= "shuffle13Cd 0.7s steps(10)"
             card3.style.animation= "shuffle31Cd 0.7s steps(10)"
-          }, 700);
+          }, 650);
         let delay = setTimeout(() => {
             card2.style.animation= "shuffle23Cu 0.7s steps(10)"
             card3.style.animation= "shuffle32Cu 0.7s steps(10)"
@@ -111,7 +111,7 @@ const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
           let delaylast = setTimeout(() => {
             card2.style.animation= "shuffle23Cd 0.7s steps(10)"
         card3.style.animation= "shuffle32Cd 0.7s steps(10)"
-          }, 2100);
+          }, 2000);
           let delayFinish = setTimeout(() => {
             Choose();
           }, 3000); 
