@@ -12,7 +12,6 @@ const card2 = document.querySelector(".card2")
 const card3 = document.querySelector(".card3")
 let cardValues;
 let cards;
-let value;
 let intervals;
 let current;
 let stop
@@ -66,14 +65,14 @@ const shuffleCard = () =>{
         changePosition(1,2,0)
         matrixGenerator(cardValues);
     }
-    else{
+    if(shuffleNumber == 2){
         changePosition(2,0,1)
         matrixGenerator(cardValues);
     }
 }
 
 const shuffleVideo = () =>{
-  value = Math.random() > 0.5 ? 1 : 2  
+  shuffleNumber = Math.random() > 0.5 ? 1 : 2  
   moving = true
   border = videoContainer.getBoundingClientRect();
 
@@ -96,121 +95,120 @@ function movingCard(){
     cardUp = (border.height / 2) - 125
     cardDown = (border.height / 2) - 25 
 
-    if(value == 1){
-
-    if(current == 1){
-      console.log("11")
-      if(shuffle1.y < cardDown){
-        let delay = setTimeout(() => {
-          if(current == 1){
-            current = 2
-          }
-        }, 500);
-        shuffle1.y = cardDown
-        shuffle2.y = cardUp
+    if(shuffleNumber == 1){
+      if(current == 1){
+        console.log("11")
+        if(shuffle1.y < cardDown){
+          let delay = setTimeout(() => {
+            if(current == 1){
+              current = 2
+            }
+          }, 500);
+          shuffle1.y = cardDown
+          shuffle2.y = cardUp
+        }
+  
+        shuffle1.y = shuffle1.y + swap.step
+        shuffle1.style.top = shuffle1.y + 'px';
+  
+        shuffle2.y = shuffle2.y - swap.step
+        shuffle2.style.top = shuffle2.y + 'px';
       }
-
-      shuffle1.y = shuffle1.y + swap.step
-      shuffle1.style.top = shuffle1.y + 'px';
-
-      shuffle2.y = shuffle2.y - swap.step
-      shuffle2.style.top = shuffle2.y + 'px';
-    }
-
-    if(current == 2){
-      console.log("12")
-      if(shuffle1.x > card2P){
-        let delay = setTimeout(() => {
-          if(current == 2){
-            current = 3
-          }
-        }, 100);
-        shuffle1.x = card2P
-        shuffle2.x = card1P
+  
+      if(current == 2){
+        if(shuffle1.x > card2P){
+          console.log("12")
+          let delay = setTimeout(() => {
+            if(current == 2){
+              current = 3
+            }
+          }, 100);
+          shuffle1.x = card2P
+          shuffle2.x = card1P
+        }
+  
+        shuffle1.x = shuffle1.x + swap.step
+        shuffle1.style.left = shuffle1.x + 'px';
+  
+        shuffle2.x = shuffle2.x - swap.step
+        shuffle2.style.left = shuffle2.x + 'px';
       }
-
-      shuffle1.x = shuffle1.x + swap.step
-      shuffle1.style.left = shuffle1.x + 'px';
-
-      shuffle2.x = shuffle2.x - swap.step
-      shuffle2.style.left = shuffle2.x + 'px';
-    }
-
-    if(current == 3){
-      console.log("13")
-      if(shuffle1.y < cardY){
-        let delay = setTimeout(() => {
-          if(current == 3){
-            current = 4
-          }
-        }, 500);
-        shuffle1.y = cardY
-        shuffle2.y = cardY
+  
+      if(current == 3){
+        console.log("13")
+        if(shuffle1.y < cardY){
+          let delay = setTimeout(() => {
+            if(current == 3){
+              current = 4
+            }
+          }, 500);
+          shuffle1.y = cardY
+          shuffle2.y = cardY
+        }
+        shuffle1.y = shuffle1.y - swap.step
+        shuffle1.style.top = shuffle1.y + 'px';
+  
+        shuffle2.y = shuffle2.y + swap.step
+        shuffle2.style.top = shuffle2.y + 'px';
       }
-      shuffle1.y = shuffle1.y - swap.step
-      shuffle1.style.top = shuffle1.y + 'px';
-
-      shuffle2.y = shuffle2.y + swap.step
-      shuffle2.style.top = shuffle2.y + 'px';
-    }
-
-    if(current == 4){
-      console.log("14")
-      if(shuffle1.y < cardDown){
-        let delay = setTimeout(() => {
-          if(current == 4){
-            current = 5
-          }
-        }, 500);
-        shuffle1.y = cardDown
-        shuffle3.y = cardUp
+  
+      if(current == 4){
+        console.log("14")
+        if(shuffle1.y < cardDown){
+          let delay = setTimeout(() => {
+            if(current == 4){
+              current = 5
+            }
+          }, 500);
+          shuffle1.y = cardDown
+          shuffle3.y = cardUp
+        }
+        shuffle1.y = shuffle1.y + swap.step
+        shuffle1.style.top = shuffle1.y + 'px';
+  
+        shuffle3.y = shuffle3.y - swap.step
+        shuffle3.style.top = shuffle3.y + 'px';
       }
-      shuffle1.y = shuffle1.y + swap.step
-      shuffle1.style.top = shuffle1.y + 'px';
-
-      shuffle3.y = shuffle3.y - swap.step
-      shuffle3.style.top = shuffle3.y + 'px';
-    }
-
-    if(current == 5){
-      console.log("15")
-      if(shuffle1.x > card3P){
-        let delay = setTimeout(() => {
-          if(current == 5){
-            current = 6
-          }
-        }, 100);
-        shuffle1.x = card3P
-        shuffle3.x = card2P
+  
+      if(current == 5){
+        console.log("15")
+        if(shuffle1.x > card3P){
+          let delay = setTimeout(() => {
+            if(current == 5){
+              current = 6
+            }
+          }, 100);
+          shuffle1.x = card3P
+          shuffle3.x = card2P
+        }
+        shuffle1.x = shuffle1.x + swap.step
+        shuffle1.style.left = shuffle1.x + 'px';
+  
+        shuffle3.x = shuffle3.x - swap.step
+        shuffle3.style.left = shuffle3.x + 'px';
       }
-      shuffle1.x = shuffle1.x + swap.step
-      shuffle1.style.left = shuffle1.x + 'px';
-
-      shuffle3.x = shuffle3.x - swap.step
-      shuffle3.style.left = shuffle3.x + 'px';
-    }
-
-    if(current == 6){
-      console.log("16")
-      if(shuffle1.y < cardY){
-        let delay = setTimeout(() => {
-          if(current == 6){
-            current = 10
-            moving = false
-            Choose()
-          }
-        }, 500);
-        shuffle1.y = cardY
-        shuffle3.y = cardY
+  
+      if(current == 6){
+        console.log("16")
+        if(shuffle1.y < cardY){
+          let delay = setTimeout(() => {
+            if(current == 6){
+              current = 10
+              moving = false
+              Choose()
+            }
+          }, 500);
+          shuffle1.y = cardY
+          shuffle3.y = cardY
+        }
+        shuffle1.y = shuffle1.y - swap.step
+        shuffle1.style.top = shuffle1.y + 'px';
+  
+        shuffle3.y = shuffle3.y + swap.step
+        shuffle3.style.top = shuffle3.y + 'px';
       }
-      shuffle1.y = shuffle1.y - swap.step
-      shuffle1.style.top = shuffle1.y + 'px';
-
-      shuffle3.y = shuffle3.y + swap.step
-      shuffle3.style.top = shuffle3.y + 'px';
     }
-  }
-  if(value == 2){
+  if(shuffleNumber == 2){
     if(current == 1){
       console.log("21")
       if(shuffle1.y < cardDown){
@@ -231,8 +229,8 @@ function movingCard(){
     }
 
     if(current == 2){
-      console.log("22")
       if(shuffle1.x > card3P){
+        console.log("22")
         let delay = setTimeout(() => {
           if(current == 2){
             current = 3
@@ -250,8 +248,8 @@ function movingCard(){
     }
 
     if(current == 3){
-      console.log("23")
       if(shuffle1.y < cardY){
+        console.log("23")
         let delay = setTimeout(() => {
           if(current == 3){
             current = 4
@@ -268,8 +266,8 @@ function movingCard(){
     }
 
     if(current == 4){
-      console.log("24")
       if(shuffle1.y < cardDown){
+        console.log("24")
         let delay = setTimeout(() => {
           if(current == 4){
             current = 5
@@ -287,8 +285,8 @@ function movingCard(){
     }
 
     if(current == 5){
-      console.log("25")
       if(shuffle1.x < card2P){
+        console.log("25")
         let delay = setTimeout(() => {
           if(current == 5){
             current = 6
@@ -419,6 +417,7 @@ startButton.addEventListener("click", () => {
     start.classList.add("hide");
     instruction.classList.remove("hide");
     current = 1;
+    shuffleNumber = 0
     let delay = setTimeout(() => {
         Show();
       }, 500);

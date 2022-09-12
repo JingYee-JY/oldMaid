@@ -39,7 +39,7 @@ img{
 .image{
     position: absolute;
     width: 30vmin;
-    height: 40vh;
+    height: auto;
     left: -1%;
 }
 .card-before,
