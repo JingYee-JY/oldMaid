@@ -72,7 +72,8 @@ const shuffleCard = () =>{
 }
 
 const shuffleVideo = () =>{
-  shuffleNumber = Math.random() > 0.5 ? 1 : 2  
+  shuffleNumber = Math.floor(Math.random() * 2) + 1
+  console.log(shuffleNumber)
   moving = true
   border = videoContainer.getBoundingClientRect();
 
