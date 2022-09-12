@@ -487,7 +487,7 @@ function Position(){
 
   card1P = (border.width / 4) - 100
   card2P = (border.width / 2) - 60
-  card3P = ((border.width / 2) + (border.width / 4)) - 20 
+  card3P = ((border.width / 2) + (border.width / 4)) -20 
   cardY = (border.height / 2) - 75
 
   shuffle1.x = card1P
