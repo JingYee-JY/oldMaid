@@ -123,12 +123,13 @@ h1{
 .card-shuffle2,
 .card-shuffle3
 {
+    
     position: absolute;
     display: flex;
     background-position: center;
     align-items: center;
     justify-content: center;
-    width: 20vmin;
+    width: 30vmin;
     height: 30vh;
 }
 .card1,
@@ -138,7 +139,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20vmin;
+    width: 30vmin;
     height: 30vh;
 }
 /*@keyframes shuffle12Cu {
