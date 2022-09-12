@@ -7,14 +7,30 @@ const start = document.querySelector(".start-container");
 const instruction = document.querySelector(".instruction-container");
 const chooseInstruction = document.querySelector(".choose-container");
 const videoContainer = document.querySelector(".video-container");
+const card1 = document.querySelector(".card1")
+const card2 = document.querySelector(".card2")
+const card3 = document.querySelector(".card3")
 let cardValues;
 let cards;
+let value;
 let intervals;
+let current;
+let stop
+let swap = {step: 1}
+let up = {step: 1}
 let shuffleNumber;
 let pickCard = true;
-let shuffle = false;
-let Videoshuffle = false;
 
+let border
+let shuffle1
+let shuffle2
+let shuffle3
+let card1P
+let card2P
+let card3P
+let cardY
+let cardUp 
+let cardDown
 
 //Items array
 const items =[
@@ -46,7 +62,7 @@ function changePosition(start,middle, end){
     cardValues = mix;
 }
 const shuffleCard = () =>{
-    if(shuffleNumber === 1){
+    if(shuffleNumber == 1){
         changePosition(1,2,0)
         matrixGenerator(cardValues);
     }
@@ -56,81 +72,306 @@ const shuffleCard = () =>{
     }
 }
 
-const shuffleVideo = (value = Math.random() > 0.5 ? 1 : 2) =>{
-    shuffleNumber = value;
-    if(shuffleNumber === 1){
-        videoContainer.innerHTML = `
-        <div class="card-shuffle1">
-        </div>
-        <div class="card-shuffle2">
-        </div>
-        <div class="card-shuffle3">
-        </div>`
-        let card1 = document.querySelector(".card-shuffle1")
-        let card2 = document.querySelector(".card-shuffle2")
-        let card3 = document.querySelector(".card-shuffle3")
-        card1.style.animation= "shuffle12Cu 0.7s steps(10)"
-        card2.style.animation= "shuffle21Cu 0.7s steps(10)"
-        let delaysecond = setTimeout(() => {
-            card1.style.animation= "shuffle12Cd 0.7s steps(10)"
-            card2.style.animation= "shuffle21Cd 0.7s steps(10)"
-          }, 650);
+const shuffleVideo = () =>{
+  value = Math.random() > 0.5 ? 1 : 2  
+  moving = true
+  border = videoContainer.getBoundingClientRect();
+
+  repeat()
+}
+
+function repeat(){
+  console.log(stop)
+  if(moving == true){
+    movingCard()
+    stop = window.requestAnimationFrame(repeat);
+  }
+  else{
+    cancelAnimationFrame(stop)
+    return
+  }
+}
+
+function movingCard(){
+    cardUp = (border.height / 2) - 125
+    cardDown = (border.height / 2) - 25 
+
+    if(value == 1){
+
+    if(current == 1){
+      console.log("11")
+      if(shuffle1.y < cardDown){
         let delay = setTimeout(() => {
-            card2.style.animation= "shuffle23Cu 0.7s steps(10)"
-            card3.style.animation= "shuffle32Cu 0.7s steps(10)"
-          }, 1400);
-          let delaylast = setTimeout(() => {
-            card2.style.animation= "shuffle23Cd 0.7s steps(10)"
-        card3.style.animation= "shuffle32Cd 0.7s steps(10)"
-          }, 2100);
-          let delayFinish = setTimeout(() => {
-            Choose();
-          }, 3000); 
+          if(current == 1){
+            current = 2
+          }
+        }, 500);
+        shuffle1.y = cardDown
+        shuffle2.y = cardUp
+      }
+
+      shuffle1.y = shuffle1.y + swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle2.y = shuffle2.y - swap.step
+      shuffle2.style.top = shuffle2.y + 'px';
     }
-    else{
-        videoContainer.innerHTML = `
-        <div class="card-shuffle1">
-        </div>
-        <div class="card-shuffle2">
-        </div>
-        <div class="card-shuffle3">
-        </div>`
-        let card1 = document.querySelector(".card-shuffle1")
-        let card2 = document.querySelector(".card-shuffle2")
-        let card3 = document.querySelector(".card-shuffle3")
-        card1.style.animation= "shuffle12Cu 0.7s steps(10)"
-        card3.style.animation= "shuffle31Cu 0.7s steps(10)"
-        let delaysecond = setTimeout(() => {
-            card1.style.animation= "shuffle13Cd 0.7s steps(10)"
-            card3.style.animation= "shuffle31Cd 0.7s steps(10)"
-          }, 650);
+
+    if(current == 2){
+      console.log("12")
+      if(shuffle1.x > card2P){
         let delay = setTimeout(() => {
-            card2.style.animation= "shuffle23Cu 0.7s steps(10)"
-            card3.style.animation= "shuffle32Cu 0.7s steps(10)"
-          }, 1400);
-          let delaylast = setTimeout(() => {
-            card2.style.animation= "shuffle23Cd 0.7s steps(10)"
-        card3.style.animation= "shuffle32Cd 0.7s steps(10)"
-          }, 2000);
-          let delayFinish = setTimeout(() => {
-            Choose();
-          }, 3000); 
+          if(current == 2){
+            current = 3
+          }
+        }, 100);
+        shuffle1.x = card2P
+        shuffle2.x = card1P
+      }
+
+      shuffle1.x = shuffle1.x + swap.step
+      shuffle1.style.left = shuffle1.x + 'px';
+
+      shuffle2.x = shuffle2.x - swap.step
+      shuffle2.style.left = shuffle2.x + 'px';
     }
-    console.log(shuffleNumber)
+
+    if(current == 3){
+      console.log("13")
+      if(shuffle1.y < cardY){
+        let delay = setTimeout(() => {
+          if(current == 3){
+            current = 4
+          }
+        }, 500);
+        shuffle1.y = cardY
+        shuffle2.y = cardY
+      }
+      shuffle1.y = shuffle1.y - swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle2.y = shuffle2.y + swap.step
+      shuffle2.style.top = shuffle2.y + 'px';
+    }
+
+    if(current == 4){
+      console.log("14")
+      if(shuffle1.y < cardDown){
+        let delay = setTimeout(() => {
+          if(current == 4){
+            current = 5
+          }
+        }, 500);
+        shuffle1.y = cardDown
+        shuffle3.y = cardUp
+      }
+      shuffle1.y = shuffle1.y + swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle3.y = shuffle3.y - swap.step
+      shuffle3.style.top = shuffle3.y + 'px';
+    }
+
+    if(current == 5){
+      console.log("15")
+      if(shuffle1.x > card3P){
+        let delay = setTimeout(() => {
+          if(current == 5){
+            current = 6
+          }
+        }, 100);
+        shuffle1.x = card3P
+        shuffle3.x = card2P
+      }
+      shuffle1.x = shuffle1.x + swap.step
+      shuffle1.style.left = shuffle1.x + 'px';
+
+      shuffle3.x = shuffle3.x - swap.step
+      shuffle3.style.left = shuffle3.x + 'px';
+    }
+
+    if(current == 6){
+      console.log("16")
+      if(shuffle1.y < cardY){
+        let delay = setTimeout(() => {
+          if(current == 6){
+            current = 10
+            moving = false
+            Choose()
+          }
+        }, 500);
+        shuffle1.y = cardY
+        shuffle3.y = cardY
+      }
+      shuffle1.y = shuffle1.y - swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle3.y = shuffle3.y + swap.step
+      shuffle3.style.top = shuffle3.y + 'px';
+    }
+  }
+  if(value == 2){
+    if(current == 1){
+      console.log("21")
+      if(shuffle1.y < cardDown){
+        let delay = setTimeout(() => {
+          if(current == 1){
+            current = 2
+          }
+        }, 500);
+        shuffle1.y = cardDown
+        shuffle3.y = cardUp
+      }
+
+      shuffle1.y = shuffle1.y + swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle3.y = shuffle3.y - swap.step
+      shuffle3.style.top = shuffle3.y + 'px';
+    }
+
+    if(current == 2){
+      console.log("22")
+      if(shuffle1.x > card3P){
+        let delay = setTimeout(() => {
+          if(current == 2){
+            current = 3
+          }
+        }, 100);
+        shuffle1.x = card3P
+        shuffle3.x = card1P
+      }
+
+      shuffle1.x = shuffle1.x + swap.step
+      shuffle1.style.left = shuffle1.x + 'px';
+
+      shuffle3.x = shuffle3.x - swap.step
+      shuffle3.style.left = shuffle3.x + 'px';
+    }
+
+    if(current == 3){
+      console.log("23")
+      if(shuffle1.y < cardY){
+        let delay = setTimeout(() => {
+          if(current == 3){
+            current = 4
+          }
+        }, 800);
+        shuffle1.y = cardY
+        shuffle3.y = cardY
+      }
+      shuffle1.y = shuffle1.y - swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle3.y = shuffle3.y + swap.step
+      shuffle3.style.top = shuffle3.y + 'px';
+    }
+
+    if(current == 4){
+      console.log("24")
+      if(shuffle1.y < cardDown){
+        let delay = setTimeout(() => {
+          if(current == 4){
+            current = 5
+          }
+        }, 500);
+        shuffle1.y = cardDown
+        shuffle2.y = cardUp
+      }
+
+      shuffle1.y = shuffle1.y + swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+
+      shuffle2.y = shuffle2.y - swap.step
+      shuffle2.style.top = shuffle2.y + 'px';
+    }
+
+    if(current == 5){
+      console.log("25")
+      if(shuffle1.x < card2P){
+        let delay = setTimeout(() => {
+          if(current == 5){
+            current = 6
+          }
+        }, 100);
+        shuffle1.x = card2P
+        shuffle2.x = card3P
+      }
+
+      shuffle1.x = shuffle1.x - swap.step
+      shuffle1.style.left = shuffle1.x + 'px';
+
+      shuffle2.x = shuffle2.x + swap.step
+      shuffle2.style.left = shuffle2.x + 'px';
+    }
+
+    if(current == 6){
+      console.log("26")
+      if(shuffle1.y < cardY){
+        let delay = setTimeout(() => {
+          if(current == 6){
+            current = 10
+              moving = false
+              Choose()
+          }
+        }, 800);
+        shuffle1.y = cardY
+        shuffle2.y = cardY
+      }
+      shuffle1.y = shuffle1.y - swap.step
+      shuffle1.style.top = shuffle1.y + 'px';
+  
+      shuffle2.y = shuffle2.y + swap.step
+      shuffle2.style.top = shuffle2.y + 'px';
+    }
+  }
 }
 
 const matrixGenerator = (cardValues, size = 3) => {
-    gameContainer.innerHTML = "";
     cardValues = [...cardValues];
     for (let i = 0; i < size; i++){
-        gameContainer.innerHTML +=`
+      if(i == 0){
+        card1.innerHTML +=`
         <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before">
         <img src="./img/Cover.png" class="image"/></div>
         <div class="card-after">
         <img src="${cardValues[i].image}" class="image"/></div>
-     </div>  
-        `;
+     </div>`;
+      }  
+      if(i == 1){
+        card2.innerHTML +=`
+        <div class="card-container" data-card-value="${cardValues[i].name}">
+        <div class="card-before">
+        <img src="./img/Cover.png" class="image"/></div>
+        <div class="card-after">
+        <img src="${cardValues[i].image}" class="image"/></div>
+     </div>`;
+      } 
+      if(i == 2){
+        card3.innerHTML +=`
+        <div class="card-container" data-card-value="${cardValues[i].name}">
+        <div class="card-before">
+        <img src="./img/Cover.png" class="image"/></div>
+        <div class="card-after">
+        <img src="${cardValues[i].image}" class="image"/></div>
+     </div>`;
+      } 
+    card1.x = card1P
+    card1.y = cardY
+    card1.style.top = card1.y + 'px';
+    card1.style.left = card1.x + 'px';
+  
+    card2.x = card2P
+    card2.y = cardY
+    card2.style.top = card2.y + 'px';
+    card2.style.left = card2.x + 'px';
+ 
+
+    card3.x = card3P
+    card3.y = cardY
+    card3.style.top = card3.y + 'px';
+    card3.style.left = card3.x + 'px';
     }
     //Grid
     gameContainer.style.gridTemplateColumns = `repeat(${size},9.25em)`;
@@ -144,8 +385,9 @@ const matrixGenerator = (cardValues, size = 3) => {
                 card.classList.add("flipped");
                 pickCard = true;
 
+                console.log(chooseInstruction)
                 if(cardName == "boy"){
-                    stopGame();
+                  chooseInstruction.classList.add("hide");
                     lose.classList.remove("hide");
                     let delay = setTimeout(() => {
                         card.classList.remove("flipped");
@@ -156,7 +398,7 @@ const matrixGenerator = (cardValues, size = 3) => {
                 }
 
                 else{
-                    stopGame();
+                  chooseInstruction.classList.add("hide");
                     win.classList.remove("hide");
                     let delay = setTimeout(() => {
                         card.classList.remove("flipped");
@@ -170,13 +412,13 @@ const matrixGenerator = (cardValues, size = 3) => {
     })
 }
 startButton.addEventListener("click", () => {
-    initializer();
+  initializer();
     controls.classList.add("hide");
+    videoContainer.classList.add("hide")
     startButton.classList.add("hide");
     start.classList.add("hide");
     instruction.classList.remove("hide");
-    shuffle = false;
-    Videoshuffle = false;
+    current = 1;
     let delay = setTimeout(() => {
         Show();
       }, 500);
@@ -194,43 +436,38 @@ Show = () => {
     
   }
   Mix = () => {
+    let all = document.querySelectorAll(".card-container")
+    all.forEach((items) => {
+      items.remove()
+    })
     videoContainer.classList.remove("hide")
-    if(Videoshuffle == false){
-        shuffleVideo()
-        Videoshuffle = true;
-    }
+      shuffleVideo()
         cards.forEach((card) => {
-            card.classList.add("hide");
+            card.remove();
         })
-        //video = document.querySelector(".back-video");
-        //let delay = setTimeout(() => {
-         //   Choose();
-         // }, 2500);
   }
 
   
 Choose = () => {
-    if(shuffle == false){
-        shuffleCard();
-        shuffle = true
-    }
-    console.log(cardValues);
-    matrixGenerator(cardValues);
+    shuffleCard();
     pickCard = false;
     instruction.classList.add("hide");
     videoContainer.classList.add("hide");
     chooseInstruction.classList.remove("hide");
   }
 
-stopGame = () => {
-    chooseInstruction.classList.add("hide");
-  }
 Retry = () => {
+  let all = document.querySelectorAll(".card-container")
+  all.forEach((items) => {
+    items.remove()
+  })  
     instruction.classList.add("hide");
     result.classList.add("hide");
     start.classList.remove("hide");
+    videoContainer.classList.remove("hide")
     controls.classList.remove("hide");
     startButton.classList.remove("hide");
+    Position()
   }
 
 //Initialize values and func calls
@@ -241,6 +478,33 @@ const initializer =() => {
     matrixGenerator(cardValues);
 };
 
-initializer();
+Position();
+function Position(){
+  shuffle1 = document.querySelector(".card-shuffle1")
+  shuffle2 = document.querySelector(".card-shuffle2")
+  shuffle3 = document.querySelector(".card-shuffle3")
+  border = videoContainer.getBoundingClientRect();
+
+  card1P = (border.width / 4) - 90
+  card2P = (border.width / 2) - 50
+  card3P = ((border.width / 2) + (border.width / 4)) -10 
+  cardY = (border.height / 2) - 75
+
+  shuffle1.x = card1P
+  shuffle1.y = cardY
+  shuffle1.style.top = shuffle1.y + 'px';
+  shuffle1.style.left = shuffle1.x + 'px';
+  
+  shuffle2.x = card2P
+  shuffle2.y = cardY
+  shuffle2.style.top = shuffle2.y + 'px';
+  shuffle2.style.left = shuffle2.x + 'px';
+ 
+
+  shuffle3.x = card3P
+  shuffle3.y = cardY
+  shuffle3.style.top = shuffle3.y + 'px';
+  shuffle3.style.left = shuffle3.x + 'px';
+}
 
     

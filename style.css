@@ -28,12 +28,6 @@ img{
     top: 45%;
     border-radius: 0.6em;
 }
-.game-container{
-    position: relative;
-    width: 100%;
-    display: grid;
-    gap: 1em;
-}
 .card-container{
     position: relative;
     justify-content: center;
@@ -44,8 +38,8 @@ img{
 }
 .image{
     position: absolute;
-    width: 6.5em;
-    height: 9.2em;
+    width: 30vmin;
+    height: 40vh;
     left: -1%;
 }
 .card-before,
@@ -113,7 +107,8 @@ h1{
 .instruction-container,
 .lose-result,
 .win-result,
-.card{
+.card,
+.game-container{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -130,25 +125,23 @@ h1{
 {
     position: absolute;
     display: flex;
-    height: 100%;
-    background-image: url("./img/Cover.png");
-    background-size: 6.5em 9.25em;
-    background-repeat: no-repeat;
     background-position: center;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 20vmin;
+    height: 30vh;
 }
-.card-shuffle1{
-    background-position: 56vmin 27vh;
+.card1,
+.card2,
+.card3{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vmin;
+    height: 30vh;
 }
-.card-shuffle2{
-    background-position: 96vh 27vh;
-}
-.card-shuffle3{
-    background-position: 135vh 27vh;
-}
-@keyframes shuffle12Cu {
+/*@keyframes shuffle12Cu {
     from {background-position-x: 56vh;} to{background-position-x: 75vh;}
     from {background-position-y: 27vh;} to{background-position-y: 60vh;}
 }
@@ -201,5 +194,56 @@ h1{
 @keyframes shuffle13Cd {
     from {background-position: 96vh;} to{background-position: 135vh;}
     from {background-position-y: 60vh;} to{background-position-y: 32vh;}
+}*/
+/*ipad min verical*/
+@media screen and (width:768px){
+    .video-container,
+    .choose-container,
+    .start-container{
+        margin-left: 10vmin;
+    }
 }
+/*ipad min horizontal**/
+@media screen and (width:1024px){
+    .card1,.card-shuffle1{
+        margin-left: -10vmin;
+    }
+    .card2,.card-shuffle2{
+        margin-left: -9vmin;
+    }
+    .card3,.card-shuffle3{
+        margin-left: -5vmin;
+    }
+}
+/*ipad air verical**/
+@media screen and (width:820px){
+    .card1,.card-shuffle1{
+        margin-top: -10vh;
+        margin-left: -12vmin;
+    }
+    .card2,.card-shuffle2{
+        margin-top: -10vh;
+        margin-left: -9vmin;
+    }
+    .card3,.card-shuffle3{
+        margin-top: -10vh;
+        margin-left: -5vmin;
+    }
+}
+/*ipad air horizontal**/
+@media screen and (width:1180px){
+    .card1,.card-shuffle1{
+        margin-left: -10vmin;
+    }
+    .card2,.card-shuffle2{
+        margin-left: -9vmin;
+    }
+    .card3,.card-shuffle3{
+        margin-left: -5vmin;
+    }
+    .card-container{
+        margin-left: -1vmin;
+    }
+}
+
 
