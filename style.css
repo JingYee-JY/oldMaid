@@ -270,7 +270,7 @@ button{
         width: 30em;
     }
     .image,.card-shuffle1 img,.card-shuffle2 img,.card-shuffle3 img{
-        width: 27vmin;
+        width: 25vmin;
     }
     .arrowHead{
         max-width: 20px;
