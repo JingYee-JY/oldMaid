@@ -1,11 +1,9 @@
-const startButton = document.getElementById("start");
+const startButton = document.querySelector(".startButton");
 const gameContainer = document.querySelector(".game-container");
-const win = document.querySelector(".win-result");
-const lose = document.querySelector(".lose-result");
-const controls = document.querySelector(".controls-container");
-const start = document.querySelector(".start-container");
+const againButton = document.querySelector(".againButton");
+const start = document.querySelector(".start");
+const game = document.querySelector(".game");
 const instruction = document.querySelector(".instruction-container");
-const chooseInstruction = document.querySelector(".choose-container");
 const videoContainer = document.querySelector(".video-container");
 const card1 = document.querySelector(".card1")
 const card2 = document.querySelector(".card2")
@@ -69,10 +67,13 @@ const shuffleCard = () =>{
         changePosition(2,0,1)
         matrixGenerator(cardValues);
     }
+    shuffleNumber = 0
 }
 
 const shuffleVideo = () =>{
-  shuffleNumber = Math.floor(Math.random() * 2) + 1
+  if(shuffleNumber == 0){
+    shuffleNumber = Math.floor(Math.random() * 2) + 1
+  }
   console.log(shuffleNumber)
   moving = true
   border = videoContainer.getBoundingClientRect();
@@ -93,8 +94,8 @@ function repeat(){
 }
 
 function movingCard(){
-    cardUp = (border.height / 2) - 125
-    cardDown = (border.height / 2) - 25 
+    cardUp = (border.height / 2) - 230
+    cardDown = (border.height / 2) - 70
 
     if(shuffleNumber == 1){
       if(current == 1){
@@ -309,7 +310,7 @@ function movingCard(){
       if(shuffle1.y < cardY){
         let delay = setTimeout(() => {
           if(current == 6){
-            current = 10
+              current = 10
               moving = false
               Choose()
           }
@@ -356,6 +357,13 @@ const matrixGenerator = (cardValues, size = 3) => {
         <img src="${cardValues[i].image}" class="image"/></div>
      </div>`;
       } 
+
+    border = gameContainer.getBoundingClientRect();
+    card1P = (border.width / 4) - 90
+    card2P = (border.width / 2) - 54
+    card3P = ((border.width / 2) + (border.width / 4)) - 18 
+    cardY = (border.height / 2) - 150
+    
     card1.x = card1P
     card1.y = cardY
     card1.style.top = card1.y + 'px';
@@ -384,26 +392,17 @@ const matrixGenerator = (cardValues, size = 3) => {
                 card.classList.add("flipped");
                 pickCard = true;
 
-                console.log(chooseInstruction)
                 if(cardName == "boy"){
-                  chooseInstruction.classList.add("hide");
-                    lose.classList.remove("hide");
+                  instruction.innerHTML = "<p>Don’t give up!</p>"
                     let delay = setTimeout(() => {
-                        card.classList.remove("flipped");
-                        pickCard = true;
-                        Retry();
-                        lose.classList.add("hide");
+                        againButton.classList.remove("hide")
                       }, 1500);
                 }
 
                 else{
-                  chooseInstruction.classList.add("hide");
-                    win.classList.remove("hide");
+                  instruction.innerHTML = "<p>Congratulation!</p>"
                     let delay = setTimeout(() => {
-                        card.classList.remove("flipped");
-                        pickCard = true;
-                        Retry();
-                        win.classList.add("hide");
+                      againButton.classList.remove("hide")
                       }, 1500);
                 }
             }
@@ -411,23 +410,40 @@ const matrixGenerator = (cardValues, size = 3) => {
     })
 }
 startButton.addEventListener("click", () => {
-  initializer();
-    controls.classList.add("hide");
-    videoContainer.classList.add("hide")
-    startButton.classList.add("hide");
+  console.log("S")
     start.classList.add("hide");
-    instruction.classList.remove("hide");
-    current = 1;
+    game.classList.remove("hide");
+    began()
+})
+
+againButton.addEventListener("click", () => {
+  againButton.classList.add("hide")
+  pickCard = true;
+  let flipped = document.querySelector(".flipped");
+  flipped.classList.remove("flipped")
+  instruction.innerHTML =""
+  let delay = setTimeout(() => {
+    Retry();
+    began()
+    }, 1000);
+})
+
+function began(){
+  instruction.classList.remove("hide");
+  initializer();  
+  current = 1;
     shuffleNumber = 0
     let delay = setTimeout(() => {
         Show();
       }, 500);
-})
+}
+
 Show = () => {
     cards.forEach((card) => {
         card.classList.add("flipped");
         let delay = setTimeout(() => {
             card.classList.remove("flipped");
+            return
           }, 1500);
           let delayMix = setTimeout(() => {
             Mix();
@@ -441,19 +457,20 @@ Show = () => {
       items.remove()
     })
     videoContainer.classList.remove("hide")
-      shuffleVideo()
-        cards.forEach((card) => {
-            card.remove();
-        })
+    instruction.innerHTML = ""
+    Position();
+    shuffleVideo()
+    cards.forEach((card) => {
+      card.remove();
+    })
   }
 
   
 Choose = () => {
     shuffleCard();
     pickCard = false;
-    instruction.classList.add("hide");
     videoContainer.classList.add("hide");
-    chooseInstruction.classList.remove("hide");
+    instruction.innerHTML = "<p>Select the Old Maid card.</p>"
   }
 
 Retry = () => {
@@ -461,35 +478,23 @@ Retry = () => {
   all.forEach((items) => {
     items.remove()
   })  
-    instruction.classList.add("hide");
-    result.classList.add("hide");
-    start.classList.remove("hide");
-    videoContainer.classList.remove("hide")
-    controls.classList.remove("hide");
-    startButton.classList.remove("hide");
+    videoContainer.classList.add("hide")
     Position()
   }
 
 //Initialize values and func calls
 const initializer =() => {
-    result.innerText = "";
+  instruction.innerHTML="<p>Remeber the Old Maid card</p>"
     winCount = 0;
     cardValues = generateRandom();
     matrixGenerator(cardValues);
 };
 
-Position();
 function Position(){
   shuffle1 = document.querySelector(".card-shuffle1")
   shuffle2 = document.querySelector(".card-shuffle2")
   shuffle3 = document.querySelector(".card-shuffle3")
-  border = videoContainer.getBoundingClientRect();
-
-  card1P = (border.width / 4) - 100
-  card2P = (border.width / 2) - 60
-  card3P = ((border.width / 2) + (border.width / 4)) -20 
-  cardY = (border.height / 2) - 75
-
+  
   shuffle1.x = card1P
   shuffle1.y = cardY
   shuffle1.style.top = shuffle1.y + 'px';

@@ -6,26 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Old Maid</title>
         <link rel="stylesheet" 
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="start-container">
-            <h1><b>Find the Old Maid</b></h1>
+        <div class="start">
+            <img class="title" src="./img/title.png">
+            <img class="preview" src="./img/preview.png">
+            <button class="startButton">
+                <p class="words"><img src="./img/arrow.png" class="arrowHead"> START GAME</p>
+            </button>
         </div>
-        <div class="instruction-container hide">
-            <h1 style="color: #EE9D74;"><b>Remember the Cards</b></h1>
+        <div class="game hide">
+            <img class="game-title" src="./img/title.png">
+            <div class="card-replace"></div>
+            <div class="instruction-container">
+                <h1>Remember the Cards</h1>
+            </div>
+            <button class="againButton hide">
+                <p class="words"><img src="./img/again.png" class="arrowHead">Play again</p>
+            </button>
         </div>
-        <div class="choose-container hide">
-            <h1 style="color: #EE9D74;"><b>Select the Old Maid.</b></h1>
-        </div>
-        <div class="win-result hide">
-            <h1 style="color: #EE9D74;"><b>Congratulations! You Win.</b></h1>
-        </div>
-        <div class="lose-result hide">
-            <h1 style="color: #EE9D74;"><b>Don’t Give Up! Try Again.</b></h1>
-        </div>
-        <div class="video-container">
+        <div class="video-container hide">
             <div class="card-shuffle1">
                 <img src="./img/Cover.png" class="image"/>
             </div>
@@ -44,11 +46,6 @@
                 <div class="card3">
                 </div>
             </div>
-        <div class="controls-container">
-        <p id="result"></p>
-        <button id="start"><b>Start</b></button>
-        </div>
-
         <script src="script.js"></script>
     </body>
 </html>
