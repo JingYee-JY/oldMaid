@@ -30,12 +30,31 @@ body{
     justify-content: center;
     align-items: center;
     display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
     width: 9.25em;
     height: 9.25em;
 }
 .image{
     position: absolute;
     width: 30vmin;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-transition: -webkit-transform 0.7s ease-out;
+    transition: -webkit-transform 0.7s ease-out;
+    -o-transition: transform 0.7s ease-out;
+    transition: transform 0.7s ease-out;
+    transition: transform 0.7s ease-out, -webkit-transform 0.7s ease-out;
+    transition: transform 0.7s ease-out, 
+    -webkit-transform 0.7s ease-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     height: auto;
     left: -1%;
 }
@@ -45,19 +64,34 @@ body{
     border-radius: 5px;
     width: 100%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.7s ease-out;
     backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.7s ease-out;
+    transition: -webkit-transform 0.7s ease-out;
+    -o-transition: transform 0.7s ease-out;
+    transition: transform 0.7s ease-out;
+    transition: transform 0.7s ease-out, -webkit-transform 0.7s ease-out;
+    -webkit-backface-visibility: hidden;
 }
 .card-after{
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 .card-container.flipped .card-before {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
 .card-container.flipped .card-after {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(0deg);
   }
 button{
@@ -242,7 +276,7 @@ button{
         max-width: 350px;
     }
     .instruction-container{
-        margin-top: 400px;
+        margin-top: 300px;
         font-size: 50px;
     }
 }
