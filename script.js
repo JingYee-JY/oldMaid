@@ -400,7 +400,7 @@ const matrixGenerator = (cardValues, size = 3) => {
                 }
 
                 else{
-                  instruction.innerHTML = "<p>Congratulation!</p>"
+                  instruction.innerHTML = "<p>Congratulations!</p>"
                     let delay = setTimeout(() => {
                       againButton.classList.remove("hide")
                       }, 1500);
@@ -484,7 +484,7 @@ Retry = () => {
 
 //Initialize values and func calls
 const initializer =() => {
-  instruction.innerHTML="<p>Remeber the Old Maid card</p>"
+  instruction.innerHTML="<p>Remember the Old Maid card</p>"
     winCount = 0;
     cardValues = generateRandom();
     matrixGenerator(cardValues);
