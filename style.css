@@ -303,6 +303,7 @@ button{
     }
     .card-shuffle1 img,.card-shuffle2 img,.card-shuffle3 img,.card1 img,.card2 img,.card3 img{
         width: 20vmin;
+        margin-left: -3vmin;
     }
     .startButton, .againButton{
         max-width: 250px;
