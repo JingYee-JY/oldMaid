@@ -1,6 +1,7 @@
 const startButton = document.querySelector(".startButton");
 const gameContainer = document.querySelector(".game-container");
 const againButton = document.querySelector(".againButton");
+const home = document.querySelector(".home");
 const start = document.querySelector(".start");
 const game = document.querySelector(".game");
 const instruction = document.querySelector(".instruction-container");
@@ -396,6 +397,7 @@ const matrixGenerator = (cardValues, size = 3) => {
                   instruction.innerHTML = "<p>Don’t give up!</p>"
                     let delay = setTimeout(() => {
                         againButton.classList.remove("hide")
+                        home.classList.remove("hide")
                       }, 1500);
                 }
 
@@ -403,6 +405,7 @@ const matrixGenerator = (cardValues, size = 3) => {
                   instruction.innerHTML = "<p>Congratulations!</p>"
                     let delay = setTimeout(() => {
                       againButton.classList.remove("hide")
+                      home.classList.remove("hide")
                       }, 1500);
                 }
             }
@@ -418,14 +421,22 @@ startButton.addEventListener("click", () => {
 
 againButton.addEventListener("click", () => {
   againButton.classList.add("hide")
+  home.classList.add("hide")
   pickCard = true;
   let flipped = document.querySelector(".flipped");
   flipped.classList.remove("flipped")
   instruction.innerHTML =""
   let delay = setTimeout(() => {
     Retry();
-    began()
+    began();
     }, 1000);
+})
+home.addEventListener("click", () => {
+  againButton.classList.add("hide")
+  home.classList.add("hide")
+  game.classList.add("hide")
+  start.classList.remove("hide")
+  Retry();
 })
 
 function began(){
