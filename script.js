@@ -422,18 +422,6 @@ startButton.addEventListener("click", () => {
 againButton.addEventListener("click", () => {
   againButton.classList.add("hide")
   home.classList.add("hide")
-  pickCard = true;
-  let flipped = document.querySelector(".flipped");
-  flipped.classList.remove("flipped")
-  instruction.innerHTML =""
-  let delay = setTimeout(() => {
-    Retry();
-    began();
-    }, 1000);
-})
-home.addEventListener("click", () => {
-  againButton.classList.add("hide")
-  home.classList.add("hide")
   game.classList.add("hide")
   start.classList.remove("hide")
   Retry();
@@ -522,5 +510,4 @@ function Position(){
   shuffle3.style.top = shuffle3.y + 'px';
   shuffle3.style.left = shuffle3.x + 'px';
 }
-
     

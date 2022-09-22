@@ -149,7 +149,7 @@ button{
     justify-content: space-between;
     text-decoration: none;
     border-radius: 10px;
-    padding: 5% 5%;
+    padding: 20px 40px;
     margin-bottom: 10%;
     color: white;
     font-size: 25px;
@@ -169,6 +169,7 @@ button{
     color: #2262A0;
     background-color: #FFF8E0;
     box-shadow: 0px 8px #2262A0;
+    margin-top: 30px;
 }
 
 .startButton p, .againButton p, .home p {
@@ -246,6 +247,10 @@ button{
     width: 30vmin;
     height: 30vh;
 }
+.instruction-container{
+    margin-top: 300px;
+    font-size: 50px;
+}
 
   /*mobile*/
   @media screen and (max-width: 767px){
@@ -253,6 +258,10 @@ button{
     width: calc(100% - 150px);
     justify-content: center;
     align-items: center;
+    }
+    .instruction-container{
+        margin-top:150px;
+        font-size: 20px;
     }
   }
 
@@ -318,6 +327,16 @@ button{
         max-width: 250px;
     }
     .card-replace{
-        height: 150px;
+        height: 0px;
+    }
+    .instruction-container{
+        margin-top:150px;
+        font-size: 40px;
     }
 }
+
+@media screen and (max-width:767px){
+    .endTitle {
+      display: none;
+    }
+  }

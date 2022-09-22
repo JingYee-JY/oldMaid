@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable =no">
         <title>Old Maid</title>
         <link rel="stylesheet" 
         href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
@@ -18,7 +18,8 @@
             </button>
         </div>
         <div class="game hide">
-            <img class="game-title" src="./img/title.png">
+            <img class="game-title endTitle" src="./img/title.png">
+           
             <div class="card-replace"></div>
             <div class="instruction-container">
                 <h1>Remember the Cards</h1>
@@ -26,7 +27,7 @@
             <button class="againButton hide">
                 <p class="words"><img src="./img/again.png" class="arrowHead">Play again</p>
             </button>
-            <button class="home hide">
+            <button class="home hide" onclick="window.location.href='https://gimme.sg/activations/dementia/';">
                 <p class="words"><img src="./img/home.png" class="arrowHead">Back to home</p>
             </button>
         </div>
